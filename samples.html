@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bird's Eye — Sample Reports</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#122e4c;--navy-d:#0c2238;--blue:#1e6fd9;--amber:#E8A33D;--amber-d:#b8791f;--ink:#1b2b3a;--muted:#5b7186;--faint:#8ba0b3;--line:#dfe8f0;--soft:#f4f8fb;--good:#12946a;--warn:#b45309;--bad:#c0392b}
+body{background:#e9eef3;color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;padding:26px 14px}
+.doc{max-width:840px;margin:0 auto 34px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 50px -24px rgba(12,34,56,.4);overflow:hidden}
+.topbar{max-width:840px;margin:0 auto 12px;display:flex;align-items:center;flex-wrap:wrap;gap:8px 18px;font-size:13px;font-weight:600}
+.topbar a{color:var(--navy);text-decoration:none}.topbar a:hover{color:var(--blue)}.topbar .jump{color:var(--blue)}
+.sample-flag{max-width:840px;margin:0 auto 14px;background:#fff8 e6;background:#fff7e6;border:1px solid #f0d692;border-radius:10px;padding:10px 14px;font-size:12.5px;color:#7a5b12;font-weight:600}
+.rhead{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-d) 100%);color:#fff;padding:26px 34px 22px;position:relative}
+.rhead .brand{display:flex;align-items:center;gap:11px}
+.rhead .brand b{font-size:17px;font-weight:800;letter-spacing:-.01em;line-height:1.05}
+.rhead .brand small{display:block;font-size:9.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#a9c2da}
+.rhead .rtitle{margin-top:20px;font-family:Fraunces,serif;font-size:27px;font-weight:700;letter-spacing:-.01em;line-height:1.1}
+.rhead .rmeta{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:12.5px;color:#c6d6e6}
+.rhead .rmeta b{color:#fff;font-weight:600}
+.rhead .price-badge{position:absolute;top:26px;right:34px;background:var(--amber);color:#241503;font-weight:800;font-size:13px;padding:6px 12px;border-radius:8px}
+.body{padding:26px 34px 30px}
+.verdict{display:flex;gap:14px;align-items:flex-start;background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--good);border-radius:10px;padding:16px 18px;margin-bottom:24px}
+.verdict.caution{border-left-color:var(--warn)}
+.verdict .vscore{font-family:Fraunces,serif;font-size:34px;font-weight:700;line-height:1;color:var(--navy);white-space:nowrap}
+.verdict h3{font-size:15px;color:var(--navy);margin-bottom:3px}
+.verdict p{font-size:13.5px;color:var(--muted)}
+h2.sec{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin:26px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+h2.sec:first-child{margin-top:0}
+.kv{display:grid;grid-template-columns:190px 1fr;gap:7px 16px;font-size:14px}
+.kv dt{color:var(--muted);font-weight:600}
+.kv dd{color:var(--ink)}
+p.para{font-size:14px;margin:8px 0}
+ul.list{list-style:none;margin:8px 0;font-size:14px}
+ul.list li{position:relative;padding-left:20px;margin:6px 0}
+ul.list li:before{content:"";position:absolute;left:2px;top:8px;width:7px;height:7px;border-radius:2px;background:var(--amber)}
+.steps{counter-reset:s;margin:10px 0}
+.steps li{list-style:none;position:relative;padding:10px 0 10px 44px;border-top:1px solid var(--line);font-size:14px}
+.steps li:before{counter-increment:s;content:counter(s);position:absolute;left:0;top:9px;width:28px;height:28px;border-radius:8px;background:var(--navy);color:#fff;font-weight:700;font-size:13px;display:grid;place-items:center}
+.steps li b{color:var(--navy)}
+table.flags{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0}
+table.flags th,table.flags td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.flags th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
+.pill{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px}
+.pill.clear{background:#e3f5ee;color:var(--good)}
+.pill.watch{background:#fdf1e0;color:var(--warn)}
+.pill.flag{background:#fbe6e3;color:var(--bad)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}
+.mini{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.mini .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
+.mini .val{font-family:Fraunces,serif;font-size:22px;font-weight:700;color:var(--navy);margin-top:3px}
+.mini .note{font-size:12px;color:var(--faint);margin-top:2px}
+.carry{background:var(--navy);color:#fff;border-radius:10px;padding:16px 18px;margin:12px 0}
+.carry .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#a9c2da;font-weight:700}
+.carry .big{font-family:Fraunces,serif;font-size:26px;font-weight:700;margin-top:4px}
+.carry p{font-size:12.5px;color:#c6d6e6;margin-top:6px}
+.contacts{font-size:13.5px}
+.contacts div{padding:7px 0;border-bottom:1px dashed var(--line)}
+.rfoot{padding:18px 34px 26px;border-top:1px solid var(--line);background:var(--soft)}
+.disc{font-size:11.5px;color:var(--muted);line-height:1.5}
+.disc b{color:var(--ink)}
+.sig{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.sig .who b{font-size:13.5px;color:var(--navy)}
+.sig .who span{font-size:12px;color:var(--muted)}
+.pagebreak{height:0}
+@media print{
+  body{background:#fff;padding:0}
+  .sample-flag{display:none}
+  .topbar{display:none}
+  .doc{box-shadow:none;border:none;border-radius:0;margin:0;max-width:100%}
+  .pagebreak{page-break-before:always}
+}
+@media(max-width:620px){.kv{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.rhead .price-badge{position:static;display:inline-block;margin-top:12px}}
+</style></head>
+<body>
+
+<!-- =========================================================
+     These are SAMPLE reports with fictional data, built to show
+     structure & tone. Swap the parcel data and print to PDF.
+     Mark: navy eagle in flight + gold head (Bird's Eye).
+========================================================= -->
+
+<div class="topbar">
+  <a href="./">&larr; Back to Bird&#8217;s Eye</a>
+  <span style="color:var(--faint)">Jump to:</span>
+  <a class="jump" href="#zoning">Zoning &amp; Entitlement Readiness</a>
+  <a class="jump" href="#feasibility">Site Readiness &amp; Feasibility</a>
+  <a class="jump" href="#audit">Location Data Audit</a>
+</div>
+<div class="sample-flag">SAMPLE — illustrative parcel and figures, for demonstration only. Not a determination for any real property.</div>
+
+<!-- ============ REPORT 1: ZONING & ENTITLEMENT READINESS ============ -->
+<div class="doc" id="zoning">
+  <div class="rhead">
+    <div class="brand">
+      <svg width="34" height="34" viewBox="0 0 48 48" aria-label="Bird's Eye"><polygon points="24,17.5 30,14 36,11 41,9 45.5,8.6 43,11.5 44,12 40,13.8 41,14.4 35.5,16.4 30,18.5 27,21 26.2,26 26.6,31.5 24,37 21.4,31.5 21.8,26 21,21 18,18.5 12.5,16.4 7,14.4 8,13.8 4,12 5,11.5 2.5,8.6 7,9 12,11 18,14 24,17.5" fill="#fff"/><circle cx="24" cy="9.6" r="3.2" fill="#E8A33D"/></svg>
+      <div><b>Bird's Eye</b><small>Location Services</small></div>
+    </div>
+    <div class="price-badge">Zoning &amp; Entitlement Readiness</div>
+    <div class="rtitle">804 Willow Avenue — Redevelopment Readiness</div>
+    <div class="rmeta"><span>BBL <b>2-02612-0038</b></span><span>Bronx (Mott Haven), NY 10454</span><span><b>±20,050 SF lot</b></span><span>Prepared <b>Jun 30, 2026</b></span><span>Ref <b>BE-2607-014</b></span></div>
+  </div>
+  <div class="body">
+
+    <div class="verdict">
+      <div class="vscore">B+</div>
+      <div><h3>Buildable as-of-right — no rezoning, no public hearing — with one clearance step on the path.</h3>
+      <p>The lot sits in a Special Mixed Use District mapped M1-4/R7A that already contemplates residential over commercial. A 48-unit mixed-use concept is achievable as-of-right; the live schedule item is the (E) designation on the lot, which requires environmental clearance through the City before building permits issue. Start that workplan at contract, not at closing.</p></div>
+    </div>
+
+    <h2 class="sec">Parcel &amp; zoning designation</h2>
+    <dl class="kv">
+      <dt>Base zoning</dt><dd>M1-4/R7A — Special Mixed Use District, Port Morris / Mott Haven</dd>
+      <dt>Permitted uses (as-of-right)</dt><dd>Residential (per R7A) alongside commercial and light-industrial uses; mixed residential-over-commercial is <b>as-of-right</b> — no rezoning, no BSA action, no ULURP.</dd>
+      <dt>Special condition</dt><dd>(E) designation on the lot — hazardous materials + noise — from the area rezoning; clearance through the Office of Environmental Remediation required before permits</dd>
+      <dt>Max height / density</dt><dd>Residential FAR 4.0 (Quality Housing); max base 65 ft, max building height 85 ft with a qualifying ground floor</dd>
+      <dt>Proposed program</dt><dd>48 units, ~4,100 SF ground-floor commercial, 8 stories / 85 ft</dd>
+    </dl>
+
+    <h2 class="sec">Overlay districts &amp; special conditions</h2>
+    <ul class="list">
+      <li><b>(E) designation:</b> hazmat and noise flags recorded on the lot from the district rezoning. Requires an OER-approved testing workplan (Phase I/II) and a Notice to Proceed before DOB issues permits — typically 2–4 months, run in parallel with design.</li>
+      <li><b>Parking:</b> no residential parking minimum applies following the City of Yes zoning changes — the program can carry zero structured parking, a major cost saver on this lot size.</li>
+      <li><b>Flood:</b> lot is outside the mapped 1%-annual-chance floodplain on the preliminary FIRMs; nearby waterfront blocks are in (see Report 2 for the full screen).</li>
+      <li><b>Landmarks:</b> no designated landmark or historic district on the block — no LPC review trigger.</li>
+    </ul>
+
+    <h2 class="sec">The entitlement path — which approvals, in what order</h2>
+    <ol class="steps">
+      <li><b>Zoning confirmation (ZD1)</b> with a code consultant — lock the as-of-right reading of FAR, height, and the MX use mix before hard money. <i>~1–2 weeks.</i></li>
+      <li><b>OER workplan for the (E) designation</b> — Phase I/II testing scope, remedial measures if triggered, Notice to Proceed. <i>Runs parallel to design.</i></li>
+      <li><b>DOB New Building filing</b> — plan examination and objections cycle; a code/expediting consultant keeps rounds short. <i>No public hearing.</i></li>
+      <li><b>DOT / Builders Pavement Plan</b> — curb cut and loading berth on the side street; ministerial with the DOB filing.</li>
+      <li><b>Permit &amp; construction sign-offs</b> — ministerial once OER and plan exam clear.</li>
+    </ol>
+
+    <h2 class="sec">Public-hearing &amp; timeline risk read</h2>
+    <div class="grid2">
+      <div class="mini"><div class="lbl">Path to permit</div><div class="val">4–7 mo</div><div class="note">OER clearance + DOB plan exam, in parallel</div></div>
+      <div class="mini"><div class="lbl">Discretionary risk</div><div class="val">None</div><div class="note">As-of-right — zero public hearings on the path</div></div>
+    </div>
+    <p class="para">Because the program is as-of-right, the risk here is administrative, not political: the two live items are (1) the (E) designation workplan — testing results set the remediation scope and schedule — and (2) DOB objection cycles during plan exam. Neither involves a community board vote or public hearing. The schedule lever is sequencing: file the OER workplan during due diligence so clearance lands alongside the DOB approval, not after it.</p>
+
+    <h2 class="sec">Jurisdiction contacts &amp; recommended next steps</h2>
+    <div class="contacts">
+      <div><b>Dept. of Buildings</b> — Bronx Borough Office · plan exam &amp; permits</div>
+      <div><b>Office of Environmental Remediation (OER)</b> — (E) designation program · workplan &amp; Notice to Proceed</div>
+      <div><b>Dept. of City Planning</b> — Bronx borough office · zoning verification (ZoLa / zoning maps)</div>
+    </div>
+    <ul class="list" style="margin-top:12px">
+      <li>Order the Phase I now — the (E) designation makes it mandatory anyway, and its findings size the remediation contingency before you go hard.</li>
+      <li>Have a code consultant confirm the zoning calcs (FAR, height, MX use mix) in writing before the deposit goes non-refundable.</li>
+      <li>Design the noise attenuation (window/wall assemblies) into the envelope from day one — the (E) noise flag sets minimum ratings, and retrofitting is the expensive path.</li>
+    </ul>
+  </div>
+  <div class="rfoot">
+    <div class="sig">
+      <svg width="30" height="30" viewBox="0 0 48 48"><polygon points="24,17.5 30,14 36,11 41,9 45.5,8.6 43,11.5 44,12 40,13.8 41,14.4 35.5,16.4 30,18.5 27,21 26.2,26 26.6,31.5 24,37 21.4,31.5 21.8,26 21,21 18,18.5 12.5,16.4 7,14.4 8,13.8 4,12 5,11.5 2.5,8.6 7,9 12,11 18,14 24,17.5" fill="#122e4c"/><circle cx="24" cy="9.6" r="3.2" fill="#E8A33D"/></svg>
+      <div class="who"><b>Reviewed by a senior land-use professional</b><span>NESO / Bird's Eye Location Services · one revision included</span></div>
+    </div>
+    <p class="disc"><b>Read this:</b> This report is professional research and planning analysis, not legal, engineering, or survey advice, and not a guarantee of approval. Zoning and entitlement outcomes are determined solely by the applicable jurisdiction. Verify all findings with the jurisdiction and your counsel before transacting.</p>
+  </div>
+</div>
+
+<!-- ============ REPORT 2: SITE READINESS & FEASIBILITY SNAPSHOT ============ -->
+<div class="pagebreak"></div>
+<div class="doc" id="feasibility">
+  <div class="rhead">
+    <div class="brand">
+      <svg width="34" height="34" viewBox="0 0 48 48" aria-label="Bird's Eye"><polygon points="24,17.5 30,14 36,11 41,9 45.5,8.6 43,11.5 44,12 40,13.8 41,14.4 35.5,16.4 30,18.5 27,21 26.2,26 26.6,31.5 24,37 21.4,31.5 21.8,26 21,21 18,18.5 12.5,16.4 7,14.4 8,13.8 4,12 5,11.5 2.5,8.6 7,9 12,11 18,14 24,17.5" fill="#fff"/><circle cx="24" cy="9.6" r="3.2" fill="#E8A33D"/></svg>
+      <div><b>Bird's Eye</b><small>Location Services</small></div>
+    </div>
+    <div class="price-badge">Site Readiness &amp; Feasibility Snapshot</div>
+    <div class="rtitle">804 Willow Avenue — Go / No-Go Package</div>
+    <div class="rmeta"><span>BBL <b>2-02612-0038</b></span><span>Bronx (Mott Haven), NY 10454</span><span><b>±20,050 SF lot</b></span><span>Prepared <b>Jun 30, 2026</b></span><span>Ref <b>BE-2607-014-S</b></span></div>
+  </div>
+  <div class="body">
+    <div class="verdict">
+      <div class="vscore">GO</div>
+      <div><h3>Proceed to a purchase offer, contingent on the two items below.</h3>
+      <p>Utilities and access are in place, the path to permit is as-of-right, and the environmental flags are the known, budgetable kind. The deal pencils at the target rent; the carrying cost while OER and plan exam run is the main variable to control.</p></div>
+    </div>
+
+    <h2 class="sec">Everything in Zoning &amp; Entitlement Readiness</h2>
+    <p class="para">This package includes the full Zoning &amp; Entitlement Readiness analysis (zoning, special conditions, path to permit, timeline risk, contacts). Summary verdict: <b>B+ — as-of-right, no public hearing; budget the (E) designation clearance into the schedule.</b></p>
+
+    <h2 class="sec">Utilities &amp; access screen</h2>
+    <table class="flags">
+      <tr><th>System</th><th>Status</th><th>Notes</th></tr>
+      <tr><td>Water</td><td><span class="pill clear">Available</span></td><td>DEP main in Willow Avenue; site connection permit at filing.</td></tr>
+      <tr><td>Sanitary sewer</td><td><span class="pill clear">Available</span></td><td>Combined sewer at frontage; house connection permit required.</td></tr>
+      <tr><td>Electric / gas</td><td><span class="pill watch">Lead time</span></td><td>Con Edison network at street; service requests run 4–6 months — order at design development, not permit.</td></tr>
+      <tr><td>Stormwater</td><td><span class="pill watch">Design item</span></td><td>On-site detention/retention under the Unified Stormwater Rule; SWPPP for construction.</td></tr>
+      <tr><td>Vehicular access</td><td><span class="pill watch">Design item</span></td><td>Loading berth per M1-4 rules; curb cut on the side street via DOT / Builders Pavement Plan.</td></tr>
+      <tr><td>Transit / walk</td><td><span class="pill clear">Strong</span></td><td>~0.3 mi to the 6 train; multiple bus routes; supports the zero-parking program.</td></tr>
+    </table>
+
+    <h2 class="sec">Environmental red flags</h2>
+    <table class="flags">
+      <tr><th>Item</th><th>Status</th><th>Notes</th></tr>
+      <tr><td>Floodplain</td><td><span class="pill clear">Outside</span></td><td>Lot outside the 1%-annual-chance floodplain on the preliminary FIRMs; waterfront blocks nearby are in.</td></tr>
+      <tr><td>(E) designation — hazmat</td><td><span class="pill watch">Diligence</span></td><td>Phase I/II testing scope set by OER; findings size the remediation contingency.</td></tr>
+      <tr><td>(E) designation — noise</td><td><span class="pill watch">Design item</span></td><td>Minimum window/wall attenuation ratings; price the assemblies into the envelope now.</td></tr>
+      <tr><td>Prior use</td><td><span class="pill watch">Diligence</span></td><td>Former light-industrial/auto use, consistent with the hazmat flag — a Phase I is mandatory here, not optional.</td></tr>
+    </table>
+
+    <h2 class="sec">Development timeline &amp; carrying-cost model</h2>
+    <div class="grid2">
+      <div class="mini"><div class="lbl">Clearance → permit</div><div class="val">4–7 mo</div><div class="note">OER workplan + DOB plan exam, in parallel</div></div>
+      <div class="mini"><div class="lbl">Permit → delivery</div><div class="val">20–24 mo</div><div class="note">Construction of 8-story, 48-unit new build</div></div>
+    </div>
+    <div class="carry">
+      <div class="lbl">Carrying cost during entitlement (illustrative)</div>
+      <div class="big">≈ $41,000 / month</div>
+      <p>At an assumed ~$5.8M land basis and 8% cost of capital plus taxes/insurance. A 3-month slip in OER or plan exam ≈ <b>$123,000</b>. The single most valuable timeline lever is filing the OER workplan at contract — during due diligence — so clearance lands alongside the DOB approval.</p>
+    </div>
+
+    <h2 class="sec">Market snapshot</h2>
+    <dl class="kv">
+      <dt>Submarket rent (Class A)</dt><dd>~$4.40–$5.10 / SF/mo in Mott Haven; new waterfront product at the top of the band</dd>
+      <dt>Vacancy</dt><dd>~3–4% stabilized in comparable new product; concessions burning off</dd>
+      <dt>Comparable pipeline</dt><dd>Several thousand units delivered along the Third Avenue / waterfront corridor since 2021; absorption has held</dd>
+      <dt>Demand drivers</dt><dd>6-train commute to Midtown (~25 min); pricing spillover from Manhattan and the Queens waterfront</dd>
+    </dl>
+
+    <h2 class="sec">Clear go / no-go read</h2>
+    <p class="para"><b>GO, contingent on:</b> (1) Phase II results that fit inside a standard remediation contingency — the (E) hazmat flag is the one item that could change the math; and (2) an early Con Edison service confirmation, since utility lead time — not approvals — is the likeliest critical-path slip. Neither is a red flag today; both are standard diligence for this deal type. If both clear, the lot supports the proposed program at target rents with an as-of-right path to permit.</p>
+  </div>
+  <div class="rfoot">
+    <div class="sig">
+      <svg width="30" height="30" viewBox="0 0 48 48"><polygon points="24,17.5 30,14 36,11 41,9 45.5,8.6 43,11.5 44,12 40,13.8 41,14.4 35.5,16.4 30,18.5 27,21 26.2,26 26.6,31.5 24,37 21.4,31.5 21.8,26 21,21 18,18.5 12.5,16.4 7,14.4 8,13.8 4,12 5,11.5 2.5,8.6 7,9 12,11 18,14 24,17.5" fill="#122e4c"/><circle cx="24" cy="9.6" r="3.2" fill="#E8A33D"/></svg>
+      <div class="who"><b>Reviewed by a senior land-use professional</b><span>NESO / Bird's Eye Location Services · one revision included</span></div>
+    </div>
+    <p class="disc"><b>Read this:</b> Feasibility figures are illustrative planning estimates, not an appraisal, engineering study, or environmental determination. Confirm utility capacity, environmental conditions, and market assumptions with qualified professionals and the jurisdiction before transacting.</p>
+  </div>
+</div>
+
+<!-- ============ REPORT 3: LOCATION DATA AUDIT ============ -->
+<div class="pagebreak"></div>
+<div class="doc" id="audit">
+  <div class="rhead">
+    <div class="brand">
+      <svg width="34" height="34" viewBox="0 0 48 48" aria-label="Bird's Eye"><polygon points="24,17.5 30,14 36,11 41,9 45.5,8.6 43,11.5 44,12 40,13.8 41,14.4 35.5,16.4 30,18.5 27,21 26.2,26 26.6,31.5 24,37 21.4,31.5 21.8,26 21,21 18,18.5 12.5,16.4 7,14.4 8,13.8 4,12 5,11.5 2.5,8.6 7,9 12,11 18,14 24,17.5" fill="#fff"/><circle cx="24" cy="9.6" r="3.2" fill="#E8A33D"/></svg>
+      <div><b>Bird's Eye</b><small>Location Services</small></div>
+    </div>
+    <div class="price-badge">Location Data Audit</div>
+    <div class="rtitle">Portfolio Data Audit — 6-Site Broker Set</div>
+    <div class="rmeta"><span>Client <b>[Brokerage]</b></span><span>6 parcels</span><span>New York City — Bronx / Queens</span><span>Prepared <b>Jun 30, 2026</b></span><span>Ref <b>BE-2607-021</b></span></div>
+  </div>
+  <div class="body">
+    <div class="verdict caution">
+      <div class="vscore">4 / 6</div>
+      <div><h3>Four listings verified clean; two carry data conflicts to resolve before marketing.</h3>
+      <p>Lot geometry, zoning, and ownership were cross-checked against the NYC Digital Tax Map, ZoLa/PLUTO zoning records, and ACRIS ownership filings. Two sites show a zoning mismatch and a lot-area discrepancy that would misstate the offering.</p></div>
+    </div>
+
+    <h2 class="sec">Verification across sources</h2>
+    <table class="flags">
+      <tr><th>Site</th><th>Zoning</th><th>Lot area</th><th>Ownership</th><th>Result</th></tr>
+      <tr><td>A — 812 E 135th St, Bronx</td><td>Matches</td><td>Matches</td><td>Matches</td><td><span class="pill clear">Clean</span></td></tr>
+      <tr><td>B — 38-11 Review Ave, Queens</td><td>Matches</td><td>Matches</td><td>Matches</td><td><span class="pill clear">Clean</span></td></tr>
+      <tr><td>C — 9 Truxton St, Bronx</td><td><b>Listed C8-3, actually M1-2</b></td><td>Matches</td><td>Matches</td><td><span class="pill flag">Conflict</span></td></tr>
+      <tr><td>D — 1420 Bruckner Blvd, Bronx</td><td>Matches</td><td><b>Listed 27,500 SF, tax map 21,340 SF</b></td><td>Matches</td><td><span class="pill flag">Conflict</span></td></tr>
+      <tr><td>E — 22-15 44th Dr, Queens</td><td>Matches</td><td>Matches</td><td>Matches</td><td><span class="pill clear">Clean</span></td></tr>
+      <tr><td>F — 587 Southern Blvd, Bronx</td><td>Matches</td><td>Matches</td><td><span class="pill watch">LLC → verify signer</span></td><td><span class="pill watch">Note</span></td></tr>
+    </table>
+
+    <h2 class="sec">GIS mapping &amp; corrections</h2>
+    <ul class="list">
+      <li><b>Site C (Truxton St):</b> lot is mapped M1-2 on the zoning maps, not C8-3 as listed — corrects permitted-use claims in the marketing sheet.</li>
+      <li><b>Site D (Bruckner Blvd):</b> Digital Tax Map geometry yields ±21,340 SF, not the 27,500 SF in the listing — an adjacent lot appears to have been included in error. Corrected; recommend a survey before contract.</li>
+      <li><b>Site F (Southern Blvd):</b> ACRIS shows title vested in an LLC; identify the authorized signer before an offer is circulated.</li>
+    </ul>
+
+    <h2 class="sec">Delivery-ready dataset</h2>
+    <p class="para">Corrected records delivered as a clean CSV/GeoJSON set: standardized BBLs, verified zoning districts, tax-map lot areas, ACRIS ownership, and a per-site flag column. Two sites carry a <b>resolve-before-marketing</b> flag. Portfolio pricing was quoted at the 6-site scope.</p>
+  </div>
+  <div class="rfoot">
+    <div class="sig">
+      <svg width="30" height="30" viewBox="0 0 48 48"><polygon points="24,17.5 30,14 36,11 41,9 45.5,8.6 43,11.5 44,12 40,13.8 41,14.4 35.5,16.4 30,18.5 27,21 26.2,26 26.6,31.5 24,37 21.4,31.5 21.8,26 21,21 18,18.5 12.5,16.4 7,14.4 8,13.8 4,12 5,11.5 2.5,8.6 7,9 12,11 18,14 24,17.5" fill="#122e4c"/><circle cx="24" cy="9.6" r="3.2" fill="#E8A33D"/></svg>
+      <div class="who"><b>Reviewed by a senior land-use professional</b><span>NESO / Bird's Eye Location Services · one revision included</span></div>
+    </div>
+    <p class="disc"><b>Read this:</b> Data verification reflects sources available at the time of review and is not a boundary survey or title opinion. Confirm boundary, acreage, and ownership with a licensed surveyor and title work before transacting.</p>
+  </div>
+</div>
+
+</body></html>
