@@ -432,4 +432,16 @@ function openLegal(k){var d=LEGAL[k]||LEGAL.terms;document.getElementById('legal
 function closeLegal(){document.getElementById('legal').classList.remove('on');document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLegal();});
 </script>
+<script>
+/* affiliate ref capture */
+(function(){try{
+  var r=new URLSearchParams(location.search).get('ref');
+  if(r){localStorage.setItem('neso.ref',r.slice(0,24));}
+  var code=localStorage.getItem('neso.ref');
+  if(code){document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href*="tally.so"]');
+    if(a&&a.href.indexOf('ref=')<0){a.href+=(a.href.indexOf('?')>-1?'&':'?')+'ref='+encodeURIComponent(code);}
+  },true);}
+}catch(e){}})();
+</script>
 </body></html>
