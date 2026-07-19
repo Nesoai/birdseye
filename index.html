@@ -33,8 +33,9 @@ h1{font-size:clamp(32px,5.4vw,54px);font-weight:800;letter-spacing:-.025em;line-
 h1 .a{color:var(--amber-d)}
 /* animated "intelligence" essence */
 .iq{position:relative;display:inline-block;color:var(--navy);font-style:normal}
-.iq .txt{position:relative;background:linear-gradient(100deg,var(--navy) 0%,var(--navy) 38%,var(--amber) 50%,var(--navy) 62%,var(--navy) 100%);background-size:280% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:iqsheen 4.2s ease-in-out infinite}
-.iq::after{content:"";position:absolute;left:-4%;right:-4%;top:8%;bottom:8%;border-radius:6px;background:radial-gradient(ellipse at center,rgba(232,163,61,.20),transparent 70%);filter:blur(6px);z-index:-1;animation:iqglow 4.2s ease-in-out infinite}
+.iq .txt{position:relative;background:linear-gradient(100deg,var(--navy) 0%,var(--navy) 38%,var(--amber) 50%,var(--navy) 62%,var(--navy) 100%);background-size:280% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:iqsheen 8s ease-in-out infinite}
+.iq::after{content:"";position:absolute;left:-4%;right:-4%;top:8%;bottom:8%;border-radius:6px;background:radial-gradient(ellipse at center,rgba(232,163,61,.20),transparent 70%);filter:blur(6px);z-index:-1;animation:iqglow 8s ease-in-out infinite}
+.big2{font-size:1.4em;font-weight:900;line-height:.9;display:inline-block;vertical-align:-.06em}
 @keyframes iqsheen{0%,100%{background-position:150% 0}50%{background-position:-50% 0}}
 @keyframes iqglow{0%,100%{opacity:.35;transform:scaleX(.92)}50%{opacity:.9;transform:scaleX(1)}}
 @media(prefers-reduced-motion:reduce){.iq .txt{animation:none;-webkit-text-fill-color:var(--amber-d);color:var(--amber-d)}.iq::after{animation:none;opacity:.5}}
@@ -130,7 +131,7 @@ footer a:hover{color:var(--amber)}
 
 <div class="hero" id="top"><div class="grid-bg"></div><div class="wrap hero-in">
   <div class="kick">Zoning &middot; Entitlements &middot; Site Intelligence &middot; Nationwide</div>
-  <h1>Site <span class="iq"><span class="txt">intelligence</span></span>, <span class="a">delivered in two days.</span></h1>
+  <h1>Site <span class="iq"><span class="txt">intelligence</span></span>, <span class="a">delivered in <span class="big2">2</span> days.</span></h1>
   <p class="sub">Zoning, entitlement, and location reports for developers, lenders, brokers, and site selectors &mdash; ordered online, prepared and verified by a senior land-use professional, in your inbox within two business days.</p>
   <div class="herocta"><a class="cta" href="#reports">Order a report &rarr;</a><a class="cta ghost" href="#instant">Try the free instant read</a></div>
   <div class="trust"><span><b>20+ years</b> land use &amp; entitlements</span><span><b>10,000+</b> permits</span><span><b>$100M+</b> incentives secured</span><span><b>484 MW+</b> energy projects sited</span><span><b>All 50</b> states covered</span></div>
@@ -255,7 +256,7 @@ footer a:hover{color:var(--amber)}
     <div class="fbrand"><svg width="26" height="26" viewBox="0 0 48 48"><polygon points="24,17.5 30,14 36,11 41,9 45.5,8.6 43,11.5 44,12 40,13.8 41,14.4 35.5,16.4 30,18.5 27,21 26.2,26 26.6,31.5 24,37 21.4,31.5 21.8,26 21,21 18,18.5 12.5,16.4 7,14.4 8,13.8 4,12 5,11.5 2.5,8.6 7,9 12,11 18,14 24,17.5" fill="#fff"/><circle cx="24" cy="9.6" r="3.2" fill="#E8A33D"/></svg> Bird&#8217;s Eye Location Services</div>
     <nav style="display:flex;gap:18px;flex-wrap:wrap"><a href="#reports">Reports</a><a href="samples.html" target="_blank" rel="noopener">Sample reports</a><a href="#instant">Instant read</a><a href="#" onclick="openLegal('terms');return false">Terms</a><a href="#" onclick="openLegal('privacy');return false">Privacy</a><a href="https://tally.so/r/rj1Z15?source=birdseye" target="_blank" rel="noopener">Feedback</a><a href="https://tally.so/r/Gx4P7o?track=re&services=Bird%27s+Eye+%E2%80%94+general+inquiry&credits=0&source=birdseye" target="_blank" rel="noopener">Contact</a><a href="https://nesoai.github.io/neso/" target="_blank" rel="noopener">NESO &nearr;</a></nav>
   </div>
-  <div class="fbot"><span>&copy; 2026 Bird&#8217;s Eye Location Services &middot; part of NESO &middot; <a href="https://nesoai.github.io/partners/" style="color:inherit;text-decoration:underline">Refer &amp; earn &rarr;</a></span><span>v1.8</span></div>
+  <div class="fbot"><span>&copy; 2026 Bird&#8217;s Eye Location Services &middot; part of NESO &middot; <a href="https://nesoai.github.io/partners/" style="color:inherit;text-decoration:underline">Refer &amp; earn &rarr;</a></span><span>v1.9</span></div>
 </div></footer>
 
 <script>
