@@ -3,6 +3,19 @@
 <title>Bird's Eye Location Services — zoning & site intelligence reports in two days</title>
 <meta name="description" content="Zoning, entitlement, and location reports for developers, lenders, brokers, and site selectors. Ordered online, prepared and verified by a senior land-use professional, delivered in two business days. Nationwide.">
 <link rel="canonical" href="https://birdseye.nesohq.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bird's Eye — part of NESO">
+<meta property="og:title" content="Bird's Eye — know before you go under contract">
+<meta property="og:description" content="Zoning, feasibility and data-audit reports on any parcel. Senior-verified, back in two business days.">
+<meta property="og:url" content="https://birdseye.nesohq.com/">
+<meta property="og:image" content="https://birdseye.nesohq.com/og-birdseye.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bird's Eye — know before you go under contract">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bird's Eye — know before you go under contract">
+<meta name="twitter:description" content="Zoning, feasibility and data audits. Senior-verified, back in two business days.">
+<meta name="twitter:image" content="https://birdseye.nesohq.com/og-birdseye.png">
 <meta property="og:url" content="https://birdseye.nesohq.com/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><rect width='48' height='48' rx='11' fill='%23122e4c'/><polygon points='24,17.5 30,14 36,11 41,9 45.5,8.6 43,11.5 44,12 40,13.8 41,14.4 35.5,16.4 30,18.5 27,21 26.2,26 26.6,31.5 24,37 21.4,31.5 21.8,26 21,21 18,18.5 12.5,16.4 7,14.4 8,13.8 4,12 5,11.5 2.5,8.6 7,9 12,11 18,14 24,17.5' fill='%23ffffff'/><circle cx='24' cy='9.6' r='3.2' fill='%23E8A33D'/></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -498,7 +511,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLegal()
 <div id="nchatPanel" role="dialog" aria-label="NESO intake chat">
   <div id="nchatHead"><span class="dot"></span><div><b>NESO intake</b><span>Automated assistant · a real person follows up</span></div><button class="x" id="nchatX" aria-label="Close">&times;</button></div>
   <div id="nchatBody"></div>
-  <div class="nchatalt">Prefer a form? <a href="https://neso-queue.nesoai-us.workers.dev/form/intake?source=birdseye" target="_blank" rel="noopener">Use the intake form</a> · or text <a href="sms:+16623824084">(662) 382-4084</a></div>
+  <div class="nchatalt">Prefer a form? <a href="https://neso-queue.nesoai-us.workers.dev/form/intake?source=birdseye" target="_blank" rel="noopener">Use the intake form</a> · or text <a href="sms:+19012950322">(901) 295-0322</a></div>
   <div id="nchatFoot">
     <button id="nchatMic" title="Speak instead of typing" aria-label="Voice input">&#127908;</button>
     <textarea id="nchatIn" rows="1" placeholder="Type or tap the mic&hellip;"></textarea>
@@ -524,7 +537,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLegal()
       const j=await r.json(); typing(false);
       if(j.reply){add('assistant',j.reply);msgs.push({role:'assistant',content:j.reply});}
       if(j.complete){setTimeout(()=>add('assistant','Thanks — you\u2019re all set. A NESO principal will follow up personally. You can close this window.'),400);}
-    }catch(e){typing(false);add('assistant','Sorry \u2014 I had trouble connecting. Please use the intake form or text (662) 382-4084.');}
+    }catch(e){typing(false);add('assistant','Sorry \u2014 I had trouble connecting. Please use the intake form or text (901) 295-0322.');}
     busy=false; $('nchatSend').disabled=false;
   }
   function open(){panel.classList.add('on');$('nchatBtn').style.display='none';inp.focus();
