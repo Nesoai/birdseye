@@ -285,9 +285,9 @@ footer a:hover{color:var(--amber)}
 <footer style="margin-top:40px"><div class="wrap">
   <div class="frow">
     <div class="fbrand"><svg width="26" height="26" viewBox="0 0 48 48"><polygon points="24,17.5 30,14 36,11 41,9 45.5,8.6 43,11.5 44,12 40,13.8 41,14.4 35.5,16.4 30,18.5 27,21 26.2,26 26.6,31.5 24,37 21.4,31.5 21.8,26 21,21 18,18.5 12.5,16.4 7,14.4 8,13.8 4,12 5,11.5 2.5,8.6 7,9 12,11 18,14 24,17.5" fill="#fff"/><circle cx="24" cy="9.6" r="3.2" fill="#E8A33D"/></svg> Bird&#8217;s Eye Location Services</div>
-    <nav style="display:flex;gap:18px;flex-wrap:wrap"><a href="#reports">Reports</a><a href="samples.html" target="_blank" rel="noopener">Sample reports</a><a href="#instant">Instant read</a><a href="#" onclick="openLegal('terms');return false">Terms</a><a href="#" onclick="openLegal('privacy');return false">Privacy</a><a href="https://neso-queue.nesoai-us.workers.dev/form/feedback" target="_blank" rel="noopener">Feedback</a><a href="https://neso-queue.nesoai-us.workers.dev/form/intake?track=re&services=Bird%27s+Eye+%E2%80%94+general+inquiry&source=birdseye" target="_blank" rel="noopener">Contact</a><a href="https://nesohq.com/" target="_blank" rel="noopener">NESO &nearr;</a></nav>
+    <nav style="display:flex;gap:18px;flex-wrap:wrap"><a href="#reports">Reports</a><a href="samples.html" target="_blank" rel="noopener">Sample reports</a><a href="#instant">Instant read</a><a href="https://nesohq.com/legal/terms.html" target="_blank" rel="noopener">Terms</a><a href="https://nesohq.com/legal/privacy.html" target="_blank" rel="noopener">Privacy</a><a href="https://neso-queue.nesoai-us.workers.dev/form/feedback" target="_blank" rel="noopener">Feedback</a><a href="https://neso-queue.nesoai-us.workers.dev/form/intake?track=re&services=Bird%27s+Eye+%E2%80%94+general+inquiry&source=birdseye" target="_blank" rel="noopener">Contact</a><a href="https://nesohq.com/" target="_blank" rel="noopener">NESO &nearr;</a></nav>
   </div>
-  <div class="fbot"><span>&copy; 2026 Bird&#8217;s Eye Location Services &middot; part of NESO &middot; <a href="https://partners.nesohq.com/" style="color:inherit;text-decoration:underline">Refer &amp; earn &rarr;</a></span><span>v2.6</span></div>
+  <div class="fbot"><span>&copy; 2026 Bird&#8217;s Eye Location Services &middot; part of NESO &middot; <a href="https://partners.nesohq.com/" style="color:inherit;text-decoration:underline">Refer &amp; earn &rarr;</a></span><span>v2.7</span></div>
 </div></footer>
 
 <script>
@@ -432,37 +432,11 @@ run();
 #legal .lbody .updated{font-size:12px;color:var(--faint);margin-bottom:10px}
 @media print{#toTop,#legal{display:none!important}}
 </style>
-<div id="legal" role="dialog" aria-modal="true" aria-label="Legal">
-  <div class="lscrim" onclick="closeLegal()"></div>
-  <div class="lpanel">
-    <div class="lhead"><h2 id="legalTitle">Terms</h2><button onclick="closeLegal()" aria-label="Close">&times;</button></div>
-    <div class="lbody" id="legalBody"></div>
-  </div>
-</div>
 <script>
 /* to-top visibility */
 (function(){var b=document.getElementById('toTop');function chk(){if(window.scrollY>500)b.classList.add('on');else b.classList.remove('on');}window.addEventListener('scroll',chk,{passive:true});chk();})();
 
 /* legal modal content */
-var LEGAL={
- terms:{title:'Terms of Service',html:'<div class="updated">Last updated: July 2026</div>'+
-  '<h3>1. What Bird\u2019s Eye provides</h3><p>Bird\u2019s Eye Location Services, a practice of NESO (New England Southern), provides professional research and planning analysis \u2014 zoning, entitlement, and location reports and the free instant read. These are informational work products to support your own decision-making.</p>'+
-  '<h3>2. Not legal, engineering, or survey advice</h3><p>Our reports and tools are not legal, engineering, surveying, appraisal, environmental, or investment advice, and are not a guarantee of any approval or outcome. Zoning and entitlement determinations rest solely with the applicable jurisdiction. You are responsible for verifying all findings with the jurisdiction and your own licensed professionals and counsel before transacting.</p>'+
-  '<h3>3. Ordering &amp; payment</h3><p>Fixed-fee reports are quoted at the prices shown; scoped work (such as data audits) is quoted before you pay. We confirm scope by email before work begins. Turnaround targets (typically two business days) begin when payment and required inputs are received; complex sites may take additional time, which we communicate in advance.</p>'+
-  '<h3>4. Revisions &amp; non-delivery</h3><p>One revision is included with each report. If we are unable to produce your report, you are not charged.</p>'+
-  '<h3>5. Your inputs</h3><p>You are responsible for the accuracy of the property information, addresses, and documents you provide. Reports are based on sources available at the time of preparation.</p>'+
-  '<h3>6. Limitation of liability</h3><p>To the fullest extent permitted by law, Bird\u2019s Eye and NESO are not liable for any indirect, incidental, or consequential damages, and total liability for any report is limited to the fee paid for that report.</p>'+
-  '<h3>7. Contact</h3><p>Questions about these terms can be sent through the contact form on this site.</p>'},
- privacy:{title:'Privacy Policy',html:'<div class="updated">Last updated: July 2026</div>'+
-  '<h3>What we collect</h3><p>When you order a report or use the contact form, we collect the information you submit \u2014 typically your name, email, phone, and the property/project details needed to prepare your work. The free instant read runs in your browser; the assumptions you enter are not stored by us unless you submit them.</p>'+
-  '<h3>How we use it</h3><p>We use your information only to prepare and deliver your report, to communicate with you about your order, and to improve our services. We do not sell your information.</p>'+
-  '<h3>Analytics</h3><p>This site may use privacy-respecting analytics to understand aggregate traffic. These do not identify you personally.</p>'+
-  '<h3>Sharing</h3><p>We share information only with service providers necessary to operate (for example, form and payment processors), and where required by law.</p>'+
-  '<h3>Your choices</h3><p>You may request access to or deletion of the information you\u2019ve submitted by contacting us through the form on this site.</p>'}
-};
-function openLegal(k){var d=LEGAL[k]||LEGAL.terms;document.getElementById('legalTitle').textContent=d.title;document.getElementById('legalBody').innerHTML=d.html;document.getElementById('legal').classList.add('on');document.body.style.overflow='hidden';}
-function closeLegal(){document.getElementById('legal').classList.remove('on');document.body.style.overflow='';}
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLegal();});
 </script>
 <script>
 /* affiliate ref capture */
