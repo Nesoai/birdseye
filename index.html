@@ -24,6 +24,22 @@
 :root{--navy:#12314e;--navy-d:#0c2238;--blue:#1e6fd9;--amber:#E8A33D;--amber-d:#c9862a;--ink:#1b2b3a;--muted:#5b7186;--faint:#8ba0b3;--line:#dfe8f0;--soft:#f4f8fb;--bg:#ffffff;--good:#12946a;--warn:#b45309}
 html{scroll-behavior:smooth}
 .fn{font-size:.5em;vertical-align:super;color:var(--amber);font-weight:600}
+#who{background:var(--navy);color:#eef4fa}
+#who h2{color:#fff}
+#who .lede{max-width:62ch;color:#c3d4e2;font-size:16.5px;line-height:1.6}
+.cred{display:grid;gap:1px;margin:26px 0 0;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.12)}
+.cred>div{background:var(--navy);padding:17px 19px}
+.cred .k{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:7px}
+.cred .v{font-size:14.5px;line-height:1.55;color:#dce7f0}
+.cred .v b{color:#fff}
+@media(min-width:760px){.cred{grid-template-columns:1fr 1fr}}
+.bothsides{display:grid;gap:1px;margin:22px 0 0;background:rgba(232,163,61,.3)}
+.bothsides>div{background:rgba(232,163,61,.07);padding:16px 18px}
+.bothsides .side{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+.bothsides p{margin:0;font-size:14px;line-height:1.55;color:#dce7f0}
+@media(min-width:760px){.bothsides{grid-template-columns:1fr 1fr}}
+.disclaim{margin:26px 0 0;padding:15px 18px;border-left:2px solid var(--amber);background:rgba(255,255,255,.05);font-size:13.5px;line-height:1.6;color:#c3d4e2}
+.disclaim b{color:#fff}
 .fnote{max-width:56ch;margin:14px 0 0;font-size:13px;line-height:1.55;color:var(--faint)}
 .fnote span{color:var(--amber);font-weight:700;margin-right:4px}
 body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -143,7 +159,7 @@ footer a:hover{color:var(--amber)}
 <header><div class="wrap nav">
   <a class="brand" href="#top"><svg width="34" height="34" viewBox="0 0 48 48" aria-label="Bird's Eye"><polygon points="24,17.5 30,14 36,11 41,9 45.5,8.6 43,11.5 44,12 40,13.8 41,14.4 35.5,16.4 30,18.5 27,21 26.2,26 26.6,31.5 24,37 21.4,31.5 21.8,26 21,21 18,18.5 12.5,16.4 7,14.4 8,13.8 4,12 5,11.5 2.5,8.6 7,9 12,11 18,14 24,17.5" fill="#122e4c"/><circle cx="24" cy="9.6" r="3.2" fill="#E8A33D"/></svg>
   <span><b>Bird&#8217;s Eye</b><small>Location Services</small></span></a>
-  <nav class="navlinks"><a href="#reports">Reports</a><a href="#instant">Free instant read</a><a href="#how">How it works</a><a href="#about">About</a><a href="#faq">FAQ</a></nav>
+  <nav class="navlinks"><a href="#reports">Reports</a><a href="#instant">Free instant read</a><a href="#how">How it works</a><a href="#about">About</a><a href="#who">Who reviews it</a><a href="#faq">FAQ</a></nav>
   <a class="cta" href="#reports">Order a report</a>
 </div></header>
 
@@ -271,6 +287,77 @@ footer a:hover{color:var(--amber)}
   </div>
 </div></section>
 
+<section id="who"><div class="wrap">
+  <h2>Who reviews your report</h2>
+  <p class="lede">Every Bird&#8217;s Eye report is written and verified under the direction of
+    <b>Charles Finkley, Jr., MPA</b> &#8212; seventeen years in land use, entitlements and
+    economic development, and roughly ten thousand permits and entitlements either managed as
+    an applicant or reviewed as the approving authority.</p>
+
+  <div class="bothsides">
+    <div>
+      <div class="side">Sat on the public side</div>
+      <p>Director of Planning &amp; Development and Contract Planning Director to a county
+        planning commission &#8212; the office that reviews site plans, runs hearings and grants
+        or denies the approval. Principal City Planner for a major metro before that.</p>
+    </div>
+    <div>
+      <div class="side">And the applicant side</div>
+      <p>President/CEO of an economic development organisation and Foreign-Trade Zone
+        administrator, then senior vice president inside a $525M-asset development enterprise
+        &#8212; negotiating site control, assembling land and taking projects through the same
+        approvals from the other chair.</p>
+    </div>
+  </div>
+
+  <div class="cred">
+    <div>
+      <div class="k">Hyperscale &amp; large-load siting</div>
+      <div class="v">Directed site selection and entitlement strategy for a <b>$10B+ hyperscale
+        data center initiative</b> &#8212; 1,800+ acres under letter of intent and site control
+        for 2,000+ acres, inside an 8,000+ acre land portfolio.</div>
+    </div>
+    <div>
+      <div class="k">Power is the real constraint</div>
+      <div class="v">Aligned <b>1&#8211;2+ GW power demand scenarios</b> against transmission
+        limits, substation and interconnection capacity, natural gas availability, fiber, water
+        and wastewater &#8212; the screen that decides whether a site is real.</div>
+    </div>
+    <div>
+      <div class="k">Utility coordination at scale</div>
+      <div class="v">Worked with <b>10+ major energy enterprises</b>, including Fortune 500
+        utilities, to structure <b>$800M+ in electrical and natural gas upgrades</b>, and
+        evaluated behind-the-meter combined-cycle generation to cut grid dependency and
+        energization risk.</div>
+    </div>
+    <div>
+      <div class="k">Renewables that feed data centers</div>
+      <div class="v">Led the full entitlement process for the Deep South&#8217;s first
+        utility-scale wind farm &#8212; <b>484 MW, $560M+ CAPEX</b> &#8212; including a 184 MW
+        project whose output was procured by <b>Amazon Web Services</b> to support data center
+        operations.</div>
+    </div>
+    <div>
+      <div class="k">Rewrote the rules, not just the applications</div>
+      <div class="v">Reformed local zoning codes, ordinances and development procedures to open
+        clearer approval pathways for utility-scale renewable energy and data
+        center&#8211;supporting infrastructure.</div>
+    </div>
+    <div>
+      <div class="k">Why it shows up in your report</div>
+      <div class="v">Knowing where a jurisdiction actually binds &#8212; which step adds a
+        hearing cycle, which utility answer is optimistic &#8212; is learned from having granted
+        the approvals and having needed them.</div>
+    </div>
+  </div>
+
+  <p class="disclaim"><b>Said plainly:</b> the projects above were delivered in prior roles, for
+    other organisations, and Bird&#8217;s Eye claims no credit for their outcomes. They are the
+    experience behind the judgment in your report, not a portfolio of work performed by this
+    firm. Where a report&#8217;s finding rests on published record rather than on that judgment,
+    the report says which is which.</p>
+</div></section>
+
 <section class="soft" id="faq"><div class="wrap faqwrap">
   <div class="sechead"><h2>Questions, answered</h2></div>
   <details open><summary>Is it really two business days?</summary><p>Two for the Zoning &amp; Entitlement Readiness report and the Location Data Audit; three for the Site Readiness &amp; Feasibility Snapshot, which carries more work. The clock starts once we have confirmed scope with you, not at checkout. When a jurisdiction&#8217;s records require a phone call or a site is unusually complex it can take an extra day &mdash; and we tell you before you wait, not after. If we run late, you are not charged for the extra time.</p></details><details><summary>Can I share the report with my client, lender, or partner?</summary><p>Yes &mdash; every report is yours to forward, attach to a package, or present under your own cover. Brokers and consultants use Bird&#8217;s Eye reports in seller packets and client deliverables every week; if you want your branding on the cover, just ask when you order.</p></details><details><summary>Who prepares the reports?</summary><p>Every report is researched and written under the direction of Charles Finkley, Jr., MPA &mdash; seventeen years in land use, entitlements, and economic development, 10,000+ permits processed, $100M+ in incentives secured. Nothing ships without senior review.</p></details>
@@ -288,7 +375,7 @@ footer a:hover{color:var(--amber)}
     <div class="fbrand"><svg width="26" height="26" viewBox="0 0 48 48"><polygon points="24,17.5 30,14 36,11 41,9 45.5,8.6 43,11.5 44,12 40,13.8 41,14.4 35.5,16.4 30,18.5 27,21 26.2,26 26.6,31.5 24,37 21.4,31.5 21.8,26 21,21 18,18.5 12.5,16.4 7,14.4 8,13.8 4,12 5,11.5 2.5,8.6 7,9 12,11 18,14 24,17.5" fill="#fff"/><circle cx="24" cy="9.6" r="3.2" fill="#E8A33D"/></svg> Bird&#8217;s Eye Location Services</div>
     <nav style="display:flex;gap:18px;flex-wrap:wrap"><a href="#reports">Reports</a><a href="#instant">Instant read</a><a href="https://nesohq.com/legal/terms.html" target="_blank" rel="noopener">Terms</a><a href="https://nesohq.com/legal/privacy.html" target="_blank" rel="noopener">Privacy</a><a href="https://neso-queue.nesoai-us.workers.dev/form/feedback" target="_blank" rel="noopener">Feedback</a><a href="https://neso-queue.nesoai-us.workers.dev/form/intake?track=re&services=Bird%27s+Eye+%E2%80%94+general+inquiry&source=birdseye" target="_blank" rel="noopener">Contact</a><a href="https://nesohq.com/" target="_blank" rel="noopener">NESO &nearr;</a></nav>
   </div>
-  <div class="fbot"><span>&copy; 2026 Bird&#8217;s Eye Location Services &middot; part of NESO &middot; <a href="https://partners.nesohq.com/" style="color:inherit;text-decoration:underline">Refer &amp; earn &rarr;</a></span><span>v2.8</span></div>
+  <div class="fbot"><span>&copy; 2026 Bird&#8217;s Eye Location Services &middot; part of NESO &middot; <a href="https://partners.nesohq.com/" style="color:inherit;text-decoration:underline">Refer &amp; earn &rarr;</a></span><span>v2.9</span></div>
 </div></footer>
 
 <script>
