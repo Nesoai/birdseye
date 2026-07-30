@@ -156,6 +156,19 @@ footer a{color:#e7eef6;text-decoration:none}
 footer a:hover{color:var(--amber)}
 .fbrand{display:flex;align-items:center;gap:9px;font-weight:800;color:#fff}
 .fbot{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12);font-size:11.5px;color:#8ba0b3;display:flex;gap:8px 18px;flex-wrap:wrap;justify-content:space-between}
+
+/* Ask Charles */
+.askc{display:flex;gap:18px;align-items:flex-start;background:var(--soft,#f4f8fb);border:1px solid var(--line,#dfe8f0);
+  border-left:3px solid var(--amber,#E8A33D);border-radius:14px;padding:18px 20px;margin:26px 0;flex-wrap:wrap}
+.askc-ph{width:96px;height:96px;border-radius:50%;object-fit:cover;flex:none;border:2px solid var(--line,#dfe8f0)}
+.askc-b{flex:1;min-width:240px}
+.askc-k{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber,#E8A33D);font-weight:800;margin-bottom:5px}
+.askc h3{font-size:17px;margin:0 0 6px;color:var(--ink,#1b2b3a)}
+.askc p{font-size:13px;color:var(--muted,#5b7186);margin:0 0 8px;line-height:1.55}
+.askc .askc-n{font-size:12px;color:var(--faint,#8ba0b3)}
+.askc-btn{display:inline-block;background:var(--amber,#E8A33D);color:#231703;font-weight:800;font-size:13px;
+  border-radius:999px;padding:10px 18px;text-decoration:none;margin-top:4px}
+@media print{.askc{display:none!important}}
 </style><!-- birdseye v3.1 · 2026-07-29 21:12 UTC
      All ten Gumroad order links pointed at nesoai.gumroad.com. The store is
      nesohq.gumroad.com. Every Bird's Eye report was unpurchasable. Same bug found
@@ -393,6 +406,40 @@ footer a:hover{color:var(--amber)}
 </div></section>
 
 <div class="wrap"><p class="disc"><b>Read this:</b> Bird&#8217;s Eye reports and the free instant read are professional research and planning analysis, not legal, engineering, or survey advice, and not a guarantee of approval. Zoning and entitlement outcomes are determined solely by the applicable jurisdiction. Verify all findings with the jurisdiction and your counsel before transacting.</p></div>
+
+
+<!-- ===== ASK CHARLES (v1) =====================================================
+     A paid, live-only consultation. Set ASK_URL below to the Google Calendar
+     appointment-schedule link once it exists; while it is empty this block does
+     not render at all, because a booking button that goes nowhere is worse than
+     no button. The photo is served from the hub, so it is uploaded once and
+     every tool picks it up.
+     THE BOUNDARY IS THE PRODUCT: thirty minutes of answers, live. Nothing
+     written, nothing researched, nothing sent afterwards. Anything on paper is
+     a Pro unlock, a Bird's Eye report, or credit work — which is what keeps
+     this from quietly becoming free consulting.
+========================================================================== -->
+<div class="askc" id="askc" style="display:none">
+  <img class="askc-ph" src="https://nesohq.com/img/charles-finkley.jpg" alt="Charles L. Finkley, Jr." loading="lazy">
+  <div class="askc-b">
+    <div class="askc-k">Ask Charles &middot; 30 minutes &middot; $150</div>
+    <h3>Stuck on the parcel, not the spreadsheet?</h3>
+    <p>Bring the address and the decision you are trying to make. Charles L. Finkley, Jr., MPA &mdash; 17 years in land use, entitlements and economic development &mdash; answers live from experience. No homework, no waiting.</p>
+    <p class="askc-n"><b>Live conversation only.</b> Nothing is researched or written up afterwards &mdash; anything on paper is a report or credit work, and he will tell you which on the call.</p>
+    <a class="askc-btn" id="askcBtn" href="#" target="_blank" rel="noopener">Book 30 minutes &rarr;</a>
+  </div>
+</div>
+<script>
+/* Paste the Google Calendar appointment-schedule link between the quotes. */
+var ASK_URL = "";
+(function(){
+  var el=document.getElementById('askc'), b=document.getElementById('askcBtn');
+  if(!el||!ASK_URL){ return; }
+  var src=encodeURIComponent(location.hostname.replace(/\.nesohq\.com$/,''));
+  b.href=ASK_URL+(ASK_URL.indexOf('?')>-1?'&':'?')+'src='+src;
+  el.style.display='';
+})();
+</script>
 
 <footer style="margin-top:40px"><div class="wrap">
   <div class="frow">
