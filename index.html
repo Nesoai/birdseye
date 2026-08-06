@@ -9,7 +9,7 @@
   gtag('config', 'G-8F80E2D56H');
 </script><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Bird's Eye Location Services — zoning & site intelligence reports in two days</title>
-<meta name="description" content="Zoning, entitlement, and location reports for developers, lenders, brokers, and site selectors. Ordered online, prepared and verified by a senior land-use professional, delivered in two to five business days. Nationwide.">
+<meta name="description" content="Zoning, entitlement, and location reports for developers, lenders, brokers, and site selectors. Ordered online, prepared and verified by a senior land-use professional, delivered in two to five business days. Focused on the Northeast and the Southern states; parcels taken anywhere in the US.">
 <link rel="canonical" href="https://birdseye.nesohq.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Bird's Eye — part of NESO">
@@ -53,6 +53,16 @@ html{scroll-behavior:smooth}
 .disclaim b{color:#fff}
 .fnote{max-width:56ch;margin:14px 0 0;font-size:13px;line-height:1.55;color:var(--faint)}
 .fnote span{color:var(--amber);font-weight:700;margin-right:4px}
+/* Confidence line under the estimate. Two states of the same product, not a
+   warning: the home-ground tiers say where we work most, the others say what
+   the research still is. Colour carries no alarm — amber is the brand accent. */
+.conf{display:flex;align-items:flex-start;gap:9px;margin:10px 0 0;padding:10px 12px;
+  border-left:2px solid var(--line);background:var(--soft);font-size:12.5px;line-height:1.5;color:var(--muted)}
+.conf b{display:inline-block;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;padding:3px 7px;border-radius:4px;white-space:nowrap;flex:none}
+.conf.ne b,.conf.s b{background:rgba(18,148,106,.12);color:var(--good)}
+.conf.w b{background:rgba(232,163,61,.16);color:var(--amber-d)}
+.conf.o b{background:rgba(91,113,134,.12);color:var(--muted)}
 body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
 a{color:var(--blue)}
@@ -177,7 +187,27 @@ footer a:hover{color:var(--amber)}
 .askc-btn{display:inline-block;background:var(--amber,#E8A33D);color:#231703;font-weight:800;font-size:13px;
   border-radius:999px;padding:10px 18px;text-decoration:none;margin-top:4px}
 @media print{.askc{display:none!important}}
-</style><!-- birdseye v3.1 · 2026-07-29 21:12 UTC
+</style><!-- birdseye v3.2 · 2026-08-06
+     THREE CHANGES.
+     1 · Ask Charles is twenty minutes, not thirty — four places: the label, the
+         button, the JS fallback label and the boundary note. This page was the
+         fourth surface still carrying the old duration after corrections rows 6
+         and 40 fixed the tools and the hub.
+     2 · The fifty-state coverage claim is gone from all four places it appeared
+         (meta description, hero kick line, trust strip, the FAQ answer). Reach
+         is unchanged and still stated: parcels taken anywhere in the US. What
+         changed is that the page now says where the work concentrates.
+     3 · The instant read carries a per-state confidence line and a grouped state
+         list, both driven by NORTHEAST / SOUTH / WORKED near the model. Those
+         three arrays are the only place a state list exists on this page.
+     Version note: before this edit the footer stamp read v3.0 while this comment
+     read v3.1 — the same two-homes-for-one-fact defect as corrections row 35 on
+     the hub. Both now read v3.2. If one is edited, edit the other.
+     STILL OPEN on this page, not touched: the Google Calendar appointment URL is
+     still a literal in the source though the button correctly uses the Gumroad
+     link; the footer's Terms and Privacy links point at real paths while
+     corrections row 58 records those pages as hash routes; the five Gumroad
+     permalinks want checking against neso-linkcheck's list. UTC
      All ten Gumroad order links pointed at nesoai.gumroad.com. The store is
      nesohq.gumroad.com. Every Bird's Eye report was unpurchasable. Same bug found
      the same day on five tool sites and two hub products. -->
@@ -192,11 +222,11 @@ footer a:hover{color:var(--amber)}
 </div></header>
 
 <div class="hero" id="top"><div class="grid-bg"></div><div class="wrap hero-in">
-  <div class="kick">Zoning &middot; Entitlements &middot; Site Intelligence &middot; Nationwide</div>
+  <div class="kick">Zoning &middot; Entitlements &middot; Site Intelligence &middot; Northeast &amp; the Southern states</div>
   <h1>Site <span class="iq"><span class="txt">intelligence</span></span>, <span class="a">delivered in <span class="big2">2</span> days.</span></h1>
   <p class="sub">Zoning, entitlement, and location reports for developers, lenders, brokers, and site selectors &mdash; ordered online, prepared and verified by a senior land-use professional, in your inbox within two to five business days.</p>
   <div class="herocta"><a class="cta" href="#reports">Order a report &rarr;</a><a class="cta ghost" href="#instant">Try the free instant read</a></div>
-  <div class="trust"><span><b>seventeen years</b> land use &amp; entitlements</span><span><b>10,000+</b> permits</span><span><b>$100M+</b> incentives secured</span><span><b>484 MW+</b> energy projects sited</span><span><b>All 50</b> states covered</span></div>
+  <div class="trust"><span><b>seventeen years</b> land use &amp; entitlements</span><span><b>10,000+</b> permits</span><span><b>$100M+</b> incentives secured</span><span><b>484 MW+</b> energy projects sited</span><span><b>Northeast + South</b> where we work most</span></div>
 </div></div>
 
 <section id="reports"><div class="wrap">
@@ -268,7 +298,7 @@ footer a:hover{color:var(--amber)}
 </div></section>
 
 <section class="soft" id="instant"><div class="wrap">
-  <div class="sechead"><h2>Free instant read</h2><p>A 30-second estimate of your entitlement timeline &mdash; powered by our 50-state model. The paid report replaces the estimate with your parcel&#8217;s facts.</p></div>
+  <div class="sechead"><h2>Free instant read</h2><p>A 30-second estimate of your entitlement timeline &mdash; powered by our 50-state model. Every state is in it; the state list is grouped by where we work most, and the read tells you which group your state is in. The paid report replaces the estimate with your parcel&#8217;s facts.</p></div>
   <div class="tool">
     <div class="trow"><span class="tlab">State</span><select class="tin" id="stSel"></select><span id="stNote" style="font-size:12px;color:var(--muted);flex:1;min-width:200px"></span></div>
     <div class="trow"><span class="tlab">Project type</span><span id="tyRow"></span></div>
@@ -277,6 +307,7 @@ footer a:hover{color:var(--amber)}
     <div class="readout">
       <div class="months" id="mo"></div>
       <div class="readnote" id="moNote"></div>
+      <div class="conf" id="confBox"></div>
       <div class="phases" id="phRow"></div>
       <div class="delay" id="delayBox"></div>
       <div class="toolcta"><a class="cta be-order" id="ctaReport" data-key="zoning" data-gum="https://nesohq.gumroad.com/l/ncicld" href="https://nesohq.gumroad.com/l/ncicld" target="_blank" rel="noopener">Get the real answer for your parcel &mdash; $495 &rarr;</a></div>
@@ -406,7 +437,7 @@ footer a:hover{color:var(--amber)}
 <section class="soft" id="faq"><div class="wrap faqwrap">
   <div class="sechead"><h2>Questions, answered</h2></div>
   <details open><summary>Is it really two business days?</summary><p>Two for the Zoning &amp; Entitlement Readiness report and the Location Data Audit; three for the Site Readiness &amp; Feasibility Snapshot, which carries more work. The clock starts once we have confirmed scope with you, not at checkout. When a jurisdiction&#8217;s records require a phone call or a site is unusually complex it can take an extra day &mdash; and we tell you before you wait, not after. If we run late, you are not charged for the extra time.</p></details><details><summary>Can I share the report with my client, lender, or partner?</summary><p>Yes &mdash; every report is yours to forward, attach to a package, or present under your own cover. Brokers and consultants use Bird&#8217;s Eye reports in seller packets and client deliverables every week; if you want your branding on the cover, just ask when you order.</p></details><details><summary>Who prepares the reports?</summary><p>Every report is researched and written under the direction of Charles Finkley, Jr., MPA &mdash; seventeen years in land use, entitlements, and economic development, 10,000+ permits processed, $100M+ in incentives secured. Nothing ships without senior review.</p></details>
-  <details><summary>Where do you cover?</summary><p>All 50 states. Our model and research process are nationwide; the human review is what keeps local quirks honest.</p></details>
+  <details><summary>Where do you cover?</summary><p>We take parcels anywhere in the United States, and the model and research process cover all fifty states. Where we work most is the Northeast &mdash; New England and New York &mdash; and the Southern states. Outside those, the research is the same and the local relationships are not assumed; the instant read says which group your state is in, and the report says which findings rest on the published record and which rest on judgement.</p></details>
   <details><summary>Who actually does the work?</summary><p>Every report is researched from primary sources &mdash; zoning codes, GIS layers, overlays, and public records &mdash; and a senior land-use professional verifies every finding and writes the recommendation. Nothing ships without that review.</p></details>
   <details><summary>Is this legal or engineering advice?</summary><p>No. Reports are professional planning research and analysis &mdash; a decision-grade starting point. Final determinations always rest with the jurisdiction, and legal questions belong with your attorney.</p></details>
   <details><summary>What do I receive?</summary><p>A clean PDF (typically 10&ndash;15 pages) with maps, the zoning read, the approval path, risk flags, jurisdiction contacts, and next steps. Data audits deliver corrected datasets in your format.</p></details>
@@ -422,7 +453,8 @@ footer a:hover{color:var(--amber)}
      not render at all, because a booking button that goes nowhere is worse than
      no button. The photo is served from the hub, so it is uploaded once and
      every tool picks it up.
-     THE BOUNDARY IS THE PRODUCT: thirty minutes of answers, live. Nothing
+     THE BOUNDARY IS THE PRODUCT: twenty minutes of answers, live, on Google
+     Meet. Nothing
      written, nothing researched, nothing sent afterwards. Anything on paper is
      a Pro unlock, a Bird's Eye report, or credit work — which is what keeps
      this from quietly becoming free consulting.
@@ -430,11 +462,11 @@ footer a:hover{color:var(--amber)}
 <div class="askc" id="askc" style="display:none">
   <img class="askc-ph" src="https://nesohq.com/img/charles-finkley.jpg" alt="Charles L. Finkley, Jr." loading="lazy">
   <div class="askc-b">
-    <div class="askc-k">Ask Charles &middot; 30 minutes &middot; $150</div>
+    <div class="askc-k">Ask Charles &middot; 20 minutes &middot; $150</div>
     <h3>Stuck on the parcel, not the spreadsheet?</h3>
     <p>Bring the address and the decision you are trying to make. Charles L. Finkley, Jr., MPA &mdash; 17 years in land use, entitlements and economic development &mdash; answers live from experience, and you keep the transcript. No homework, no waiting.</p>
     <p class="askc-n"><b>You keep the transcript.</b> The call is transcribed and sent to you afterwards &mdash; that is the deliverable. No research beforehand and no new documents after: anything drawn, modelled or researched is a report or credit work, and he will tell you which on the call.</p>
-    <a class="askc-btn" id="askcBtn" href="#" target="_blank" rel="noopener">Book 30 minutes &rarr;</a>
+    <a class="askc-btn" id="askcBtn" href="#" target="_blank" rel="noopener">Book 20 minutes &rarr;</a>
   </div>
 </div>
 <script>
@@ -467,7 +499,7 @@ var ASK_PAY_URL = "https://nesohq.gumroad.com/l/gugtzc";
     b.textContent='Text (901) 295-0322 to book \u2192';
     b.removeAttribute('target');
     var k=el.querySelector('.askc-k');
-    if(k) k.innerHTML='Ask Charles \u00b7 30 minutes \u00b7 $150 \u00b7 <span style="opacity:.8">online booking coming soon</span>';
+    if(k) k.innerHTML='Ask Charles \u00b7 20 minutes \u00b7 $150 \u00b7 <span style="opacity:.8">online booking coming soon</span>';
   }
   el.style.display='';
 })();
@@ -478,11 +510,35 @@ var ASK_PAY_URL = "https://nesohq.gumroad.com/l/gugtzc";
     <div class="fbrand"><svg width="26" height="26" viewBox="0 0 48 48"><polygon points="24,17.5 30,14 36,11 41,9 45.5,8.6 43,11.5 44,12 40,13.8 41,14.4 35.5,16.4 30,18.5 27,21 26.2,26 26.6,31.5 24,37 21.4,31.5 21.8,26 21,21 18,18.5 12.5,16.4 7,14.4 8,13.8 4,12 5,11.5 2.5,8.6 7,9 12,11 18,14 24,17.5" fill="#fff"/><circle cx="24" cy="9.6" r="3.2" fill="#E8A33D"/></svg> Bird&#8217;s Eye Location Services</div>
     <nav style="display:flex;gap:18px;flex-wrap:wrap"><a href="#reports">Reports</a><a href="#instant">Instant read</a><a href="https://nesohq.com/ask.html?source=birdseye-footer">Ask NESO</a><a href="https://nesohq.com/legal/terms.html" target="_blank" rel="noopener">Terms</a><a href="https://nesohq.com/legal/privacy.html" target="_blank" rel="noopener">Privacy</a><a href="https://neso-queue.nesoai-us.workers.dev/form/feedback" target="_blank" rel="noopener">Feedback</a><a href="https://neso-queue.nesoai-us.workers.dev/form/intake?track=re&services=Bird%27s+Eye+%E2%80%94+general+inquiry&source=birdseye" target="_blank" rel="noopener">Contact</a><a href="https://nesohq.com/" target="_blank" rel="noopener">NESO &nearr;</a></nav>
   </div>
-  <div class="fbot"><span>&copy; 2026 Bird&#8217;s Eye Location Services &middot; part of NESO &middot; <a href="https://partners.nesohq.com/" style="color:inherit;text-decoration:underline">Refer &amp; earn &rarr;</a></span><span>v3.0</span></div>
+  <div class="fbot"><span>&copy; 2026 Bird&#8217;s Eye Location Services &middot; part of NESO &middot; <a href="https://partners.nesohq.com/" style="color:inherit;text-decoration:underline">Refer &amp; earn &rarr;</a></span><span>v3.2</span></div>
 </div></footer>
 
 <script>
-/* ============ BIRD'S EYE INSTANT READ v1.0 (50-state entitlement model — formerly PermitPath) ============ */
+/* ============ BIRD'S EYE INSTANT READ v1.1 (50-state entitlement model — formerly PermitPath) ============ */
+/* THE FOCUS REGIONS, DEFINED ONCE.
+   Every regional statement on this page reads from these three arrays: the
+   grouped state list, the confidence line under the estimate, and nothing else.
+   If the footprint changes, it changes here and the page follows. Do not restate
+   a state list in prose anywhere on this page.
+   NORTHEAST — New England plus New York. NJ and PA are deliberately out: there
+   are no relationships there yet. Add them here when there are.
+   SOUTH — includes Texas and Florida. OPEN: Oklahoma, Delaware, Maryland and DC
+   are not in either list; decide rather than leave them to drift.
+   WORKED — states outside both regions where a principal has actually worked.
+   It is a smaller claim than the focus regions and is worded that way. */
+const NORTHEAST=['ME','NH','VT','MA','RI','CT','NY'];
+const SOUTH=['AL','AR','FL','GA','KY','LA','MS','NC','SC','TN','TX','VA','WV'];
+const WORKED=['CA'];
+function focusOf(c){
+  if(NORTHEAST.includes(c)) return {g:'ne',  label:'Northeast',
+    line:'Home ground. New England and New York are where we work most.'};
+  if(SOUTH.includes(c))     return {g:'s',   label:'Southern states',
+    line:'Home ground. The Southern states are where we work most.'};
+  if(WORKED.includes(c))    return {g:'w',   label:'Worked here',
+    line:'Outside the two focus regions, but a principal has worked on approvals in this state.'};
+  return {g:'o', label:'Everywhere else',
+    line:'Researched from the record: codes, GIS layers, overlays and public filings. Same process, no local relationships assumed \u2014 and the report says which findings rest on the record and which rest on judgement.'};
+}
 const STATES={
  AL:{n:'Alabama',m:.85,sc:null,note:'Generally permissive; larger metros add review layers.'},
  AK:{n:'Alaska',m:1.0,sc:null,note:'Light zoning outside Anchorage/boroughs; logistics and season drive schedules more than process.'},
@@ -560,7 +616,15 @@ const fm=n=>'$'+Math.round(n).toLocaleString('en-US');
 const f1=n=>(Math.round(n*10)/10).toLocaleString('en-US',{maximumFractionDigits:1});
 let sel={st:'CT',type:'mf',size:'m',juris:'sub'};
 
-$('stSel').innerHTML=Object.keys(STATES).sort((a,b)=>STATES[a].n.localeCompare(STATES[b].n)).map(k=>`<option value="${k}">${STATES[k].n}</option>`).join('');
+(function(){
+  const byName=(a,b)=>STATES[a].n.localeCompare(STATES[b].n);
+  const groups=[['Northeast','ne'],['Southern states','s'],['Worked here','w'],['Everywhere else','o']];
+  $('stSel').innerHTML=groups.map(g=>{
+    const opts=Object.keys(STATES).filter(k=>focusOf(k).g===g[1]).sort(byName)
+      .map(k=>`<option value="${k}">${STATES[k].n}</option>`).join('');
+    return opts?`<optgroup label="${g[0]}">${opts}</optgroup>`:'';
+  }).join('');
+})();
 $('stSel').value=sel.st;
 $('stSel').onchange=()=>{sel.st=$('stSel').value;run();};
 function segs(rowId,pairs,cur,set){
@@ -593,6 +657,9 @@ function run(){
   $('mo').innerHTML=f1(R.lo)+'&ndash;'+f1(R.hi)+' <small>months</small>';
   $('moNote').textContent=R.st.n+' \u00b7 '+R.ty[1].replace(/^\S+\s/,'')+' \u00b7 '+JURIS[sel.juris][0].toLowerCase()+' \u00b7 estimated entitlement-to-permit window';
   $('stNote').innerHTML=R.st.note+(R.st.sc?' <b style="color:var(--good)">\u23F1 '+R.st.sc+'</b>':'');
+  const F=focusOf(sel.st);
+  $('confBox').className='conf '+F.g;
+  $('confBox').innerHTML='<b>'+F.label+'</b><span>'+F.line+'</span>';
   $('phRow').innerHTML=R.rows.map(r=>`<span class="ph"><b>${r.name}</b> ${f1(r.lo)}&ndash;${f1(r.hi)} mo</span>`).join('');
   const d3=CARRY_MO*3;
   $('delayBox').innerHTML='\u26A1 On a typical deal, every month of this window burns about <b>'+fm(CARRY_MO)+'</b> in interest and holding costs \u2014 a 3-month slip \u2248 <b>'+fm(d3)+'</b>. The full report models <i>your</i> parcel and numbers.';
