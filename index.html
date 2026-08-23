@@ -224,13 +224,13 @@ footer a:hover{color:var(--amber)}
 <div class="hero" id="top"><div class="grid-bg"></div><div class="wrap hero-in">
   <div class="kick">Zoning &middot; Entitlements &middot; Site Intelligence &middot; Northeast &amp; the Southern states</div>
   <h1>Site <span class="iq"><span class="txt">intelligence</span></span>, <span class="a">delivered in <span class="big2">2</span> days.</span></h1>
-  <p class="sub">Zoning, entitlement, and location reports for developers, lenders, brokers, and site selectors &mdash; scoped in one form, quoted in writing, then prepared and verified by a senior land-use professional — in your inbox within two to five business days.</p>
+  <p class="sub">Zoning, entitlement, and location reports for developers, lenders, brokers, and site selectors &mdash; ordered online, prepared and verified by a senior land-use professional, in your inbox within two to five business days.</p>
   <div class="herocta"><a class="cta" href="#reports">Order a report &rarr;</a><a class="cta ghost" href="#instant">Try the free instant read</a></div>
   <div class="trust"><span><b>seventeen years</b> land use &amp; entitlements</span><span><b>10,000+</b> permits</span><span><b>$100M+</b> incentives secured</span><span><b>484 MW+</b> energy projects sited</span><span><b>Northeast + South</b> where we work most</span></div>
 </div></div>
 
 <section id="reports"><div class="wrap">
-  <div class="sechead"><h2>Five reports. Quoted scope, fixed clock.</h2><p>The answers a consultant takes weeks to assemble &mdash; scoped in one form, quoted in writing, and fixed before any work starts.</p>
+  <div class="sechead"><h2>Four reports. Fixed scope, fixed clock.</h2><p>The answers a consultant takes weeks to assemble &mdash; scoped in one form, quoted in writing, and fixed before any work starts.</p>
     <p class="fnote">Every clock runs from scope confirmation, not from checkout. Each report states its own below.</p></div>
   <div class="cards">
     <div class="card">
@@ -288,20 +288,6 @@ footer a:hover{color:var(--amber)}
         <li>Energization timeline and a stated power go / no-go</li>
       </ul>
       <a class="cta blue be-order" data-key="power" data-gum="https://nesohq.gumroad.com/l/nvuxi" href="https://nesohq.gumroad.com/l/nvuxi" target="_blank" rel="noopener">Order this report</a>
-    </div>
-    <div class="card">
-      <div class="tagp">New</div>
-      <h3>Site Snapshot</h3>
-      <div class="turn">Delivered in 3&ndash;5 business days &middot; per site</div>
-      <div class="forwho">Your site package, on one page.</div>
-      <ul class="inc">
-        <li>Four headline numbers a decision-maker will actually read</li>
-        <li>Site, location and power facts side by side</li>
-        <li>Proportional breakdown of area, acreage or capacity</li>
-        <li>The commercial position, stated plainly</li>
-        <li>What is settled, what is open, and what happens next</li>
-      </ul>
-      <a class="cta blue be-order" data-key="snapshot" href="/order-site-snapshot.html">Order this report</a>
     </div>
   </div>
   <p class="note-c">The clock starts at scope confirmation &mdash; when we have your parcel details and can proceed &mdash; not at checkout. Complex sites can take an extra day, and we tell you up front, not after. If we are ever late, you hear it from us as soon as we know and you are not charged for the extra time. Every report is researched, assembled, and <b>reviewed by a senior land-use professional</b> before it ships. One revision included. Prepared under the direction of a principal holding an MPA &mdash; seventeen years in land use, entitlements, and economic development.</p>
@@ -817,16 +803,12 @@ run();
    up a Stripe link even once one was pasted in. */
 window.QUOTE_MODE = true;                 // false = order directly, as before
 window.BE_QUOTE = {
-  zoning:   "/order-zoning-entitlement-readiness.html",
-  feas:     "/order-site-readiness-feasibility.html",
-  audit:    "/order-location-data-audit.html",
-  power:    "/order-power-energization-screen.html",
-  snapshot: "/order-site-snapshot.html"
+  zoning: "https://neso-queue.nesoai-us.workers.dev/form/intake?source=birdseye-zoning",
+  feas:   "https://neso-queue.nesoai-us.workers.dev/form/intake?source=birdseye-feasibility",
+  audit:  "https://neso-queue.nesoai-us.workers.dev/form/intake?source=birdseye-audit",
+  power:  "https://neso-queue.nesoai-us.workers.dev/form/intake?source=birdseye-power"
 };
-/* Stripe links are issued per accepted quote, never published on this page.
-   A live payment link before scope confirmation lets someone start the clock
-   in the wrong place — Policy 7.1. */
-window.BE_STRIPE = { zoning:"", feas:"", audit:"", power:"", snapshot:"" };
+window.BE_STRIPE = { zoning:"", feas:"", audit:"", power:"" };
 (function(){try{
   document.querySelectorAll('a.be-order').forEach(function(a){
     var k = a.getAttribute('data-key');
