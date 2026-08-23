@@ -133,7 +133,7 @@ footer b{color:var(--ink);font-weight:700;letter-spacing:.06em;text-transform:up
 </div>
 
 <script>
-var QUEUE="https://neso-queue.nesoai-us.workers.dev/submit", REPORT="Power & Energization Screen", BASE=1500, DAYS="5-8 business days";
+var QUEUE="https://neso-queue.nesoai-us.workers.dev/submit", REPORT="Power & Energization Screen", BASE=3950, DAYS="5-8 business days";
 var FACTORS=[{name:'load',label:'Load you are planning for',opts:[{l:'Under 20 MW',k:'x',v:1.0},{l:'20-100 MW',k:'x',v:1.3},{l:'100-350 MW',k:'x',v:1.6},{l:'Over 350 MW',k:'x',v:2.0}]},{name:'sites',label:'How many sites',opts:[{l:'One',k:'x',v:1.0},{l:'Two or three',k:'x',v:1.7},{l:'Four or more',k:'x',v:2.6}]},{name:'gas',label:'Natural gas as well as electric',opts:[{l:'No',k:'x',v:1.0},{l:'Yes',k:'+',v:350}]},{name:'btm',label:'Behind-the-meter generation read',opts:[{l:'Not needed',k:'x',v:1.0},{l:'Yes, include it',k:'+',v:500}]}];
 var f=document.getElementById('f'), m=document.getElementById('m'), b=document.getElementById('b');
 
