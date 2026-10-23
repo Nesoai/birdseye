@@ -187,7 +187,8 @@ footer a:hover{color:var(--amber)}
 .askc-btn{display:inline-block;background:var(--amber,#E8A33D);color:#231703;font-weight:800;font-size:13px;
   border-radius:999px;padding:10px 18px;text-decoration:none;margin-top:4px}
 @media print{.askc{display:none!important}}
-</style><!-- birdseye v3.2 · 2026-08-06
+</style><!-- birdseye v3.3 · 2026-10-23 · adds the "Watch live" section (NESO Now, above the footer), its menu link and a footer link to now.nesohq.com
+     birdseye v3.2 · 2026-08-06
      THREE CHANGES.
      1 · Ask our MPA is twenty minutes, not thirty — four places: the label, the
          button, the JS fallback label and the boundary note. This page was the
@@ -217,7 +218,7 @@ footer a:hover{color:var(--amber)}
 <header><div class="wrap nav">
   <a class="brand" href="#top"><svg width="34" height="34" viewBox="0 0 48 48" aria-label="Bird's Eye"><polygon points="24,17.5 30,14 36,11 41,9 45.5,8.6 43,11.5 44,12 40,13.8 41,14.4 35.5,16.4 30,18.5 27,21 26.2,26 26.6,31.5 24,37 21.4,31.5 21.8,26 21,21 18,18.5 12.5,16.4 7,14.4 8,13.8 4,12 5,11.5 2.5,8.6 7,9 12,11 18,14 24,17.5" fill="#122e4c"/><circle cx="24" cy="9.6" r="3.2" fill="#E8A33D"/></svg>
   <span><b>Bird&#8217;s Eye</b><small>Site Location Intelligence</small></span></a>
-  <nav class="navlinks"><a href="#reports">Reports</a><a href="#instant">Free instant read</a><a href="#how">How it works</a><a href="#about">About</a><a href="#who">Who reviews it</a><a href="#faq">FAQ</a></nav>
+  <nav class="navlinks"><a href="#reports">Reports</a><a href="#instant">Free instant read</a><a href="#how">How it works</a><a href="#about">About</a><a href="#who">Who reviews it</a><a href="#faq">FAQ</a><a href="#watch-live"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#c4302b;margin-right:6px;vertical-align:1px"></span>Live</a></nav>
   <a class="cta" href="#reports">Request a quote</a>
 </div></header>
 
@@ -514,12 +515,65 @@ var ASK_PAY_URL = "https://nesohq.gumroad.com/l/gugtzc";
 })();
 </script>
 
+<!-- NESO Now · "Watch live" section (revised 23 October 2026: adds the link to now.nesohq.com) for birdseye.nesohq.com
+     Paste this whole block into the page's HTML where the section should appear (for
+     example just above the footer), then publish the site as usual.
+     The broadcast is https://www.youtube.com/watch?v=s8cUJGltXlg. If that broadcast is ever ended
+     and recreated in YouTube Studio, replace s8cUJGltXlg in all five places below.
+     endDate is required by Google for a stream that has no planned end; move it a year
+     forward each October (The Live Book, section 7). -->
+<section class="neso-live" id="watch-live" aria-labelledby="neso-live-h">
+  <style>
+    .neso-live{max-width:960px;margin:48px auto;padding:0 16px}
+    .neso-live h2{margin:0 0 6px}
+    .neso-live p{margin:0 0 14px;opacity:.85}
+    .neso-live .frame{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#111}
+    .neso-live iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .neso-live .badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;color:#fff;background:#c4302b;border-radius:4px;padding:2px 8px;margin-right:8px;vertical-align:2px}
+    .neso-live .links{margin-top:12px;font-size:15px}
+    .neso-live .links a{margin-right:18px}
+  </style>
+  <h2 id="neso-live-h"><span class="badge">LIVE</span>Watch live</h2>
+  <p>Land, zoning, entitlements and power: official figures and new federal rules, read live around the clock. The voice is computer-generated.</p>
+  <div class="frame">
+    <iframe src="https://www.youtube.com/embed/s8cUJGltXlg" title="Bird's Eye on NESO Now · Live 24/7 · Land, zoning, entitlements and power" loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <p class="links"><a href="https://www.youtube.com/watch?v=s8cUJGltXlg">Open on YouTube</a><a href="https://www.youtube.com/@nesonow?sub_confirmation=1">Subscribe to NESO Now</a><a href="https://www.youtube.com/@nesonow/streams">All three streams</a><a href="https://now.nesohq.com/">Today's figures, rules and lessons</a></p>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Bird's Eye on NESO Now · Live 24/7 · Land, zoning, entitlements and power",
+  "description": "Around the clock: housing starts, building permits, construction spending and electricity prices, new federal rules on land, water, flood risk and power, FEMA disaster declarations, and short lessons on entitlements. The voice is computer-generated.",
+  "thumbnailUrl": [
+    "https://i.ytimg.com/vi/s8cUJGltXlg/hqdefault.jpg"
+  ],
+  "uploadDate": "2026-10-20T19:12:00Z",
+  "embedUrl": "https://www.youtube.com/embed/s8cUJGltXlg",
+  "contentUrl": "https://www.youtube.com/watch?v=s8cUJGltXlg",
+  "author": {
+    "@type": "Organization",
+    "name": "NESO HQ LLC",
+    "url": "https://nesohq.com/"
+  },
+  "publication": {
+    "@type": "BroadcastEvent",
+    "isLiveBroadcast": true,
+    "startDate": "2026-10-20T19:12:00Z",
+    "endDate": "2027-10-20T00:00:00Z"
+  }
+}
+  </script>
+</section>
+
 <footer style="margin-top:40px"><div class="wrap">
   <div class="frow">
     <div class="fbrand"><svg width="26" height="26" viewBox="0 0 48 48"><polygon points="24,17.5 30,14 36,11 41,9 45.5,8.6 43,11.5 44,12 40,13.8 41,14.4 35.5,16.4 30,18.5 27,21 26.2,26 26.6,31.5 24,37 21.4,31.5 21.8,26 21,21 18,18.5 12.5,16.4 7,14.4 8,13.8 4,12 5,11.5 2.5,8.6 7,9 12,11 18,14 24,17.5" fill="#fff"/><circle cx="24" cy="9.6" r="3.2" fill="#E8A33D"/></svg> Bird&#8217;s Eye Site Location Intelligence</div>
-    <nav style="display:flex;gap:18px;flex-wrap:wrap"><a href="#reports">Reports</a><a href="#instant">Instant read</a><a href="https://nesohq.com/ask.html?source=birdseye-footer">Ask NESO</a><a href="https://nesohq.com/legal/terms.html" target="_blank" rel="noopener">Terms</a><a href="https://nesohq.com/legal/privacy.html" target="_blank" rel="noopener">Privacy</a><a href="https://neso-queue.nesoai-us.workers.dev/form/feedback" target="_blank" rel="noopener">Feedback</a><a href="https://neso-queue.nesoai-us.workers.dev/form/intake?track=re&services=Bird%27s+Eye+%E2%80%94+general+inquiry&source=birdseye" target="_blank" rel="noopener">Contact</a><a href="https://nesohq.com/" target="_blank" rel="noopener">NESO &nearr;</a></nav>
+    <nav style="display:flex;gap:18px;flex-wrap:wrap"><a href="#reports">Reports</a><a href="#instant">Instant read</a><a href="https://nesohq.com/ask.html?source=birdseye-footer">Ask NESO</a><a href="https://nesohq.com/legal/terms.html" target="_blank" rel="noopener">Terms</a><a href="https://nesohq.com/legal/privacy.html" target="_blank" rel="noopener">Privacy</a><a href="https://neso-queue.nesoai-us.workers.dev/form/feedback" target="_blank" rel="noopener">Feedback</a><a href="https://neso-queue.nesoai-us.workers.dev/form/intake?track=re&services=Bird%27s+Eye+%E2%80%94+general+inquiry&source=birdseye" target="_blank" rel="noopener">Contact</a><a href="https://nesohq.com/" target="_blank" rel="noopener">NESO &nearr;</a><a href="https://now.nesohq.com/">NESO Now</a></nav>
   </div>
-  <div class="fbot"><span>&copy; 2026 Bird&#8217;s Eye Site Location Intelligence &middot; part of NESO &middot; <a href="https://partners.nesohq.com/" style="color:inherit;text-decoration:underline">Refer &amp; earn &rarr;</a></span><span>v3.2</span></div>
+  <div class="fbot"><span>&copy; 2026 Bird&#8217;s Eye Site Location Intelligence &middot; part of NESO &middot; <a href="https://partners.nesohq.com/" style="color:inherit;text-decoration:underline">Refer &amp; earn &rarr;</a></span><span>v3.3</span></div>
 </div></footer>
 
 <script>
