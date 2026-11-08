@@ -85,8 +85,9 @@ footer b{color:var(--ink);font-weight:700;letter-spacing:.06em;text-transform:up
       </div>
       <div class="row">
         <div><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" required></div>
-        <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div>
+        <div><label for="phone">Mobile (optional)</label><input id="phone" name="phone" type="tel"></div>
       </div>
+      <label class="smsck" style="display:flex;gap:8px;align-items:flex-start;font-weight:400;font-size:12.5px;line-height:1.45;margin-top:10px"><input type="checkbox" name="sms_consent" value="yes" style="width:auto;margin-top:3px"> <span>I agree to receive text messages from NESO about my inquiry or engagement, including quotes and project updates. Message frequency varies, typically fewer than 10 per month. Message and data rates may apply. Reply STOP to unsubscribe, HELP for help. Consent is not a condition of purchase. <a href="https://nesohq.com/legal/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> &middot; <a href="https://nesohq.com/legal/terms.html" target="_blank" rel="noopener">Terms</a></span></label>
     </fieldset>
 
     <fieldset>
@@ -125,7 +126,7 @@ footer b{color:var(--ink);font-weight:700;letter-spacing:.06em;text-transform:up
   </div>
 
   <footer>
-    <div><b>Contact</b> &nbsp;charles@nesohq.com &nbsp;&middot;&nbsp; 901.428.6801 &nbsp;&middot;&nbsp; birdseye.nesohq.com</div>
+    <div><b>Contact</b> &nbsp;charles@nesohq.com &nbsp;&middot;&nbsp; 901.295.0322 &nbsp;&middot;&nbsp; birdseye.nesohq.com</div>
     <div style="margin-top:2px">Bird&rsquo;s Eye is the location-intelligence practice of NESO HQ LLC. Every report is
     researched from primary sources and released personally by the reviewing principal. Not legal, engineering or
     survey advice.</div>
@@ -175,7 +176,8 @@ f.addEventListener('submit', function(e){
     "Turnaround usually: " + DAYS + "\n" +
     "Indicative range shown to them: " + money(p.low) + " \u2013 " + money(p.high) + "\n\n" +
     "CLIENT\n" + (d.name||"") + (d.company ? " - " + d.company : "") + "\n" +
-    (d.email||"") + (d.phone ? " - " + d.phone : "") + "\n\n" +
+    (d.email||"") + (d.phone ? " - " + d.phone : "") + "\n" +
+    "Texts: " + (d.sms_consent==="yes" ? "agreed (box ticked)" : "not agreed - call or email") + "\n\n" +
     "SITE\nParcel: " + (d.parcel||"") + "\nJurisdiction: " + (d.jurisdiction||"") + "\n" +
     "Decision: " + (d.decision||"") + "\n\n" +
     "SCOPE\n" + p.chosen.join("\n") + "\n" +
