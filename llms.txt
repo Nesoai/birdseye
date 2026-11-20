@@ -2,7 +2,7 @@
 
 > Zoning, entitlement, and location reports for developers, lenders, brokers, and site selectors. Scoped in one form, quoted in writing, prepared and verified by a senior land-use professional, delivered in two to eight business days. Focused on the Northeast and the Southern states; parcels taken anywhere in the US.
 
-Bird's Eye is NESO HQ LLC's site research service at https://birdseye.nesohq.com/. It starts with a free instant read of a parcel; each written report is scoped in one form and quoted in writing before any work starts.
+Bird's Eye is NESO HQ LLC's site research service at https://birdseye.nesohq.com/. It starts with a free instant read (a 30-second estimate of an entitlement timeline, by state and project type); each written report is scoped in one form and quoted in writing before any work starts.
 
 ## Reports
 
