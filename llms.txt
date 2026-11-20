@@ -1,0 +1,35 @@
+# Bird's Eye Site Location Intelligence
+
+> Zoning, entitlement, and location reports for developers, lenders, brokers, and site selectors. Scoped in one form, quoted in writing, prepared and verified by a senior land-use professional, delivered in two to eight business days. Focused on the Northeast and the Southern states; parcels taken anywhere in the US.
+
+Bird's Eye is NESO HQ LLC's site research service at https://birdseye.nesohq.com/. It starts with a free instant read of a parcel; each written report is scoped in one form and quoted in writing before any work starts.
+
+## Reports
+
+- [Location Data Audit](https://birdseye.nesohq.com/order-location-data-audit.html)
+- [Power & Energization Screen](https://birdseye.nesohq.com/order-power-energization-screen.html)
+- [Site Readiness & Feasibility Snapshot](https://birdseye.nesohq.com/order-site-readiness-feasibility.html)
+- [Site Snapshot](https://birdseye.nesohq.com/order-site-snapshot.html)
+- [Zoning & Entitlement Readiness](https://birdseye.nesohq.com/order-zoning-entitlement-readiness.html)
+
+## Who it is for
+
+Developers, landowners, lenders, brokers, site selectors, cities, counties and economic development groups.
+
+## About NESO
+
+Bird's Eye is made by NESO HQ LLC, which offers advisory services, research reports and free tools for founders,
+small businesses, developers and municipalities: https://nesohq.com/ (its llms.txt: https://nesohq.com/llms.txt).
+Questions: hello@nesohq.com · (901) 295-0322.
+
+## Other free NESO tools
+
+- [GrantFit](https://grantfit.nesohq.com/)
+- [MarketFit](https://marketfit.nesohq.com/)
+- [PlanForge](https://planforge.nesohq.com/)
+- [MarketScope](https://marketscope.nesohq.com/)
+- [CapStack](https://capstack.nesohq.com/)
+- [ProForma](https://proforma.nesohq.com/)
+- [SiteShaper](https://siteshaper.nesohq.com/)
+- [BuildBrief](https://buildbrief.nesohq.com/)
+- [NESO for Contractors](https://contractors.nesohq.com/): free public bids and state-by-state guides for contractors.
